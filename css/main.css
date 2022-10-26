@@ -320,7 +320,9 @@ header {
     background-color: transparent;
 }
 
-
+.feature-disabled {
+    color: #4e545c;
+}
 
 .feature h4 {
     font-family: 'Montserrat', sans-serif;
@@ -409,6 +411,18 @@ footer {
 }
 .mobile-foot {
     display: none;
+}
+.container {
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 15px;    
+    background-color: #37363d;    
+    padding: 20px;
+}
+.small {
+    margin-left: 40%;
+    margin-right: 40%;
 }
 @media (max-width: 1200px) {
 

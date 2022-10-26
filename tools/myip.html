@@ -1,0 +1,58 @@
+<head>
+    <title>Web Tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/WebTools/css/main.css">
+</head>
+<header>
+    <h1 class="logo">WebTools</h1>
+	<nav>
+		<ul class="nav-area top-nav">
+			<li><a href="/WebTools">Home</a></li>
+		</ul>
+	</nav>
+</header>
+<body>
+<!-- title -->
+<div class="features">
+	<div class="wrapper reveal">
+		<div class="title">
+			<div class="th1">
+				<h1>What's my IP</h1>
+			</div>
+			<center>
+				<div class="thr">
+					caioasdsada
+					<hr>
+				</div>
+			</center>
+		</div>
+    </div>
+</div>
+<!-- title -->
+<div class="container small">
+	<h1 id="output">Loading..</h1>
+</div>
+
+
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+     
+      <script>
+     
+    /* Add "https://api.ipify.org?format=json" statement
+               this will communicate with the ipify servers in
+               order to retrieve the IP address $.getJSON will
+               load JSON-encoded data from the server using a
+               GET HTTP request */
+                
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+         
+        // Setting text of element P with id gfg
+        $("#output").html(data.ip);
+    })
+    </script>
+
+
+<!-- tools end-->
+</div>
