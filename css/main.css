@@ -260,13 +260,13 @@ header {
     from {background: var(--main-color);}
     to {background: #4f545c;}
 }
-.home-btn1 {
+.feature-btn-main {
     margin-top: 15px;
     width: auto;
     padding: 8px 50px;
     border-radius: 50px;
     border: none;
-    background: #ff5122;
+    background: var(--main-color);
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -274,8 +274,8 @@ header {
     transition: .35s;
     animation-duration: 600ms;
 }
-.home-btn1:hover {
-    background-color: var(--main-color);
+.feature-btn-main:hover {
+    background-color: var(--main-hover-color);
 }
 .home-btn2 {
     margin-top: 15px;
@@ -368,11 +368,11 @@ header {
 .feature1 i,
 .feature1 h4,
 .feature1 .cta {
-    color: #ff5122;
+    color: var(--main-color);
 }
 
 .feature1:hover {
-    border: 2px solid #ff5122;
+    border: 2px solid var(--main-color);
 }
 
 .feature2 i,
