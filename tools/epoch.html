@@ -1,0 +1,63 @@
+<head>
+    <title>Web Tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/WebTools/css/main.css">
+</head>
+<header>
+    <h1 class="logo">WebTools</h1>
+	<nav>
+		<ul class="nav-area top-nav">
+			<li><a href="/WebTools">Home</a></li>
+		</ul>
+	</nav>
+</header>
+<body>
+<!-- title -->
+<div class="features">
+	<div class="epochClock wrapper reveal" name="epochClock">
+		<div class="title">
+			<div class="th1">
+				<h1>Epoch Clock</h1>
+			</div>
+			<center>
+				<div class="thr">
+					
+					<hr>
+				</div>
+			</center>
+		</div>
+    </div>
+</div>
+<!-- title -->
+<div class="container">
+    <h3>Epoch (Seconds)</h3>
+	<h1 id="output">Loading..</h1>
+    <button id="pbutton" class="btn-stop" onclick="pauseclock(t)">Pause</button>
+</div>
+<div class="container">
+    <h3>Standard Time</h3>
+	<h1 id="output1">Loading..</h1>
+</div>
+
+<script>
+function updateclock() {
+    console.log("update")
+    const now = new Date()  
+    const secondsSinceEpoch = Math.round(now.getTime() / 1000)
+    document.getElementById('output').innerHTML = secondsSinceEpoch;
+    document.getElementById('output1').innerHTML = now;
+}
+function pauseclock(t) {
+    document.getElementById('pbutton').innerHTML = 'Paused';
+    document.getElementById("pbutton").classList.add('btn-play');
+    document.getElementById("pbutton").classList.remove('btn-stop');
+    clearInterval(t);
+}
+
+var t=setInterval(updateclock,1000);
+
+</script>
+
+
+<!-- tools end-->
+</div>

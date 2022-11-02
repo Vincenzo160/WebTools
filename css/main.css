@@ -149,6 +149,7 @@ header {
     color: var(--heading-color);
 }
 
+
 .nav-area {
     list-style: none;
 }
@@ -275,6 +276,34 @@ header {
 }
 .feature-btn-main:hover {
     background-color: var(--main-hover-color);
+}
+.btn-play {
+    margin-top: 15px;
+    width: auto;
+    padding: 8px 50px;
+    border-radius: 50px;
+    border: none;
+    background: green;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .35s;
+    animation-duration: 600ms;
+}
+.btn-stop {
+    margin-top: 15px;
+    width: auto;
+    padding: 8px 8px;
+    border-radius: 50px;
+    border: none;
+    background: red;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .35s;
+    animation-duration: 600ms;
 }
 .home-btn2 {
     margin-top: 15px;
