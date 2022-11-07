@@ -30,22 +30,38 @@
 </div>
 <!-- title -->
 <div class="container">
-    <h3>Epoch (Seconds)</h3>
-	<h1 id="output">Loading..</h1>
-    <button id="pbutton" class="btn-stop" onclick="pauseclock(t)">Pause</button>
+	<div>
+		<h3>Epoch (Seconds)</h3>
+		<h1 id="output">Loading..</h1>
+		<button id="pbutton" class="btn-stop" onclick="pauseclock(t)">Pause</button>
+	</div>
 </div>
-<div class="container">
-    <h3>Standard Time</h3>
-	<h1 id="output1">Loading..</h1>
+<div class="container" id="simple-t">
+	<div>
+		<h3>Simple Time</h3>
+		<h1 id="output2">Loading..</h1>
+		<button id="pbutton" class="btn-stop" onclick="Fullscreen1()">Fullscreen</button>
+	</div>
+</div>
+<div class="container" id="standard-t">
+	<div>
+		<h3>Standard Time</h3>
+		<h1 id="output1">Loading..</h1>
+		<button id="pbutton" class="btn-stop" onclick="Fullscreen(clocksimple)">Fullscreen</button>
+	</div>
 </div>
 
 <script>
-function updateclock() {
-    console.log("update")
-    const now = new Date()  
-    const secondsSinceEpoch = Math.round(now.getTime() / 1000)
-    document.getElementById('output').innerHTML = secondsSinceEpoch;
-    document.getElementById('output1').innerHTML = now;
+var clocksimple = false
+console.log("init")
+	function updateclock(clocksimple) {
+		console.log("update")
+		const now = new Date()  
+		var simplenow = now.getHours()+':'+(now.getMinutes()+1)+':'+now.getSeconds();
+		document.getElementById('output2').innerHTML = simplenow;
+		document.getElementById('output1').innerHTML = now;
+		const secondsSinceEpoch = Math.round(now.getTime() / 1000)
+		document.getElementById('output').innerHTML = secondsSinceEpoch;
 }
 function pauseclock(t) {
     document.getElementById('pbutton').innerHTML = 'Paused';
@@ -53,8 +69,33 @@ function pauseclock(t) {
     document.getElementById("pbutton").classList.remove('btn-stop');
     clearInterval(t);
 }
+function Fullscreen() {
+	var elem = document.getElementById("standard-t");
+	openFullscreen(elem)
+}
+function Fullscreen1() {
+	var elem = document.getElementById("simple-t");
+	openFullscreen(elem)
+}
+function openFullscreen(elem) {
+	if (document.exitFullscreen) {
+		document.exitFullscreen();
+	} else if (document.webkitExitFullscreen) { /* Safari */
+		document.webkitExitFullscreen();
+	} else if (document.msExitFullscreen) { /* IE11 */
+		document.msExitFullscreen();
+	}
+	if (elem.requestFullscreen) {
+	elem.requestFullscreen();
+	} else if (elem.webkitRequestFullscreen) { /* Safari */
+	elem.webkitRequestFullscreen();
+	} else if (elem.msRequestFullscreen) { /* IE11 */
+	elem.msRequestFullscreen();
+	}
+}
 
-var t=setInterval(updateclock,1000);
+
+var t=setInterval(updateclock,1000,clocksimple);
 
 </script>
 
