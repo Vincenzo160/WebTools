@@ -54,14 +54,14 @@
 <script>
 var clocksimple = false
 console.log("init")
-	function updateclock(clocksimple) {
-		console.log("update")
-		const now = new Date()  
-		var simplenow = now.getHours()+':'+(now.getMinutes()+1)+':'+now.getSeconds();
-		document.getElementById('output2').innerHTML = simplenow;
-		document.getElementById('output1').innerHTML = now;
-		const secondsSinceEpoch = Math.round(now.getTime() / 1000)
-		document.getElementById('output').innerHTML = secondsSinceEpoch;
+function updateclock(clocksimple) {
+	console.log("update")
+	const now = new Date()  
+	var simplenow = now.getHours()+':'+(now.getMinutes())+':'+now.getSeconds();
+	document.getElementById('output2').innerHTML = simplenow;
+	document.getElementById('output1').innerHTML = now;
+	const secondsSinceEpoch = Math.round(now.getTime() / 1000)
+	document.getElementById('output').innerHTML = secondsSinceEpoch;
 }
 function pauseclock(t) {
     document.getElementById('pbutton').innerHTML = 'Paused';
