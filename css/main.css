@@ -513,7 +513,9 @@ nav .categorys span {
 header {
     padding: 10px 25px;
 }
-
+.btn-epoch {
+    display: none;
+}
 .top-nav {
     display: none;
 }
