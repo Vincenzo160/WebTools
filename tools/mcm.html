@@ -1,0 +1,105 @@
+<head>
+    <title>Web Tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/WebTools/css/main.css">
+</head>
+<header>
+    <h1 class="logo">WebTools</h1>
+	<nav>
+		<ul class="nav-area top-nav">
+			<li><a href="/WebTools">Home</a></li>
+		</ul>
+	</nav>
+</header>
+<body>
+<!-- title -->
+<div class="features">
+	<div class="epochClock wrapper reveal" name="epochClock">
+		<div class="title">
+			<div class="th1">
+				<h1>Calculator</h1>
+			</div>
+			<center>
+				<div class="thr">
+					
+					<hr>
+				</div>
+			</center>
+		</div>
+    </div>
+</div>
+<!-- title -->
+<div class="container">
+	<div>
+		<h3>Input</h3>
+        <input type="text" id="inptxt0">
+        <input type="text" id="inptxt1">
+        <input type="text" id="inptxt2">
+        <input type="text" id="inptxt3">
+        <button id="inpbtn0" onclick="addinptxt(showninptxt)">+Add</button>
+	</div>
+    <br>
+    <button id="inpbtn0" onclick="mcm()">Calculate</button>
+    <br>
+</div>
+<div class="container">
+	<div>
+		<h3>Output</h3>
+        <h1 id="outtxt"></h1>
+	</div>
+    <br>
+    <br>
+</div>
+<!--
+inptxt0,1,2,3 | Text Boxes
+inpbtn0 | Add
+-->
+
+<script>
+var showninptxt = 0;
+console.log("init")
+
+
+
+
+function mcm() {
+    // take input
+    const num1 = document.getElementById('inptxt0').value;
+    const num2 = document.getElementById("inptxt1").value;
+
+    // higher number among number1 and number2 is stored in min
+    let min = (+num1 > +num2) ? +num1 : +num2;
+
+    // while loop
+    while (true) {
+        if (min % +num1 == 0 && min % +num2 == 0) {
+            console.log(`The LCM of ${num1} and ${num2} is ${min}`);
+            document.getElementById('outtxt').innerHTML = min
+            break;
+        }
+        min++;
+    }
+}
+function addinptxt(showninptxt) {
+    var inpbtn0 = document.getElementById("inpbtn0");
+    var inptxt2 = document.getElementById("inptxt2");
+    var inptxt3 = document.getElementById("inptxt3");
+    console.log(showninptxt)
+    if (showninptxt === 0) {
+        inptxt2.style.display = "initial";
+    } else if (showninptxt === 1) {
+        inpbtn0.style.display = "none";
+        inptxt3.style.display = "initial";
+    }
+    window['showninptxt'] = showninptxt + 1
+
+}
+
+
+</script>
+
+<style>
+    #inptxt3, #inptxt2 {
+        display: none;
+    }
+</style>

@@ -47,6 +47,16 @@ body {
     background-color: var(--bg-color);
 }
 
+input {
+    background-color: var(--bg-color);
+    color: var(--heading-color);
+}
+
+button {
+    background-color: var(--bg-color);
+    color: var(--heading-color);
+}
+
 ::-webkit-scrollbar {
     width: 10px;
     background-color: #000000;
