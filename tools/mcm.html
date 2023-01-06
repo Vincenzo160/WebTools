@@ -66,6 +66,12 @@ function mcm() {
     // take input
     const num1 = document.getElementById('inptxt0').value;
     const num2 = document.getElementById("inptxt1").value;
+    if (num1===null || num1==="") {
+        return 
+    }
+    if (num2===null || num2==="") {
+        return 
+    }
 
     // higher number among number1 and number2 is stored in min
     let min = (+num1 > +num2) ? +num1 : +num2;
@@ -81,6 +87,7 @@ function mcm() {
     }
 }
 function addinptxt(showninptxt) {
+    alert("Not yet impemented")
     var inpbtn0 = document.getElementById("inpbtn0");
     var inptxt2 = document.getElementById("inptxt2");
     var inptxt3 = document.getElementById("inptxt3");
